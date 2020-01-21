@@ -48,7 +48,11 @@
                                     <td><?php echo "Rp. ". number_format($row['harga'],2,',',',',) ?></td>
                                     <td><?php echo $row['lama_sewa']." Jam" ?></td>
                                     <td><?php echo "Rp. ". number_format($row['total_harga'],2,',',',',) ?></td>
-                                    <td><?php echo $row['status_bayar'] ?></td>
+                                    <?php if($row['status_bayar'] == 0){ ?>
+                                        <td><a href="<?php echo base_url('home/payment/'.$row['kd_invoice'])?>" class="btn btn-primary">Belum Bayar</a></td>
+                                    <?php }else{?>
+                                        <td><a href="" class="btn btn-success">Sudah Lunas</a></td>
+                                    <?php }?>
                                 </tr>
                             <?php }?>
                         </tbody>

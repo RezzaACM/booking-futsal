@@ -10,7 +10,7 @@
             <a class="nav-item nav-link active" href="<?php echo base_url('home')?>">Home <span class="sr-only">(current)</span></a>
             <?php if($this->session->userdata('nama')  != null){ ?>
               <a class="nav-item nav-link" href="<?php echo base_url()?>home/booking">Booking</a>
-              <a class="nav-item nav-link" href="#">Transaksi</a>
+              <a class="nav-item nav-link" href="<?php echo base_url()?>home/transaction">Transaksi</a>
               <!-- <a class="nav-item nav-link" href="#">Pengaturan</a> -->
               <a class="nav-item nav-link" href="#">Hi, <?php echo $this->session->userdata('nama') ?></a>
               <a onclick="return confirm('Anda yakin untuk keluar ?') " class="nav-item nav-link" href="<?php echo base_url()?>home/logout">Logout</a>

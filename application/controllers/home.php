@@ -178,6 +178,43 @@ class Home extends CI_Controller {
         $data['get_trx_user'] = $this->get->get_transaction_user($id_user)->result_array();
         $this->load->view('website/transaksi',$data);
     }
+
+    function generateRandomString($length = 10) {
+        return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
+    }
+    public function upload_foto(){
+        $config['upload_path']          = './upload/struk/';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['file_name']            = $this->generateRandomString();
+        $config['overwrite']			= true;
+        $config['max_size']             = 1024; // 1MB
+        // $config['max_width']            = 1024;
+        // $config['max_height']           = 768;
+
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('struk')) {
+           return $this->upload->data("file_name") ;
+        }
+        print_r($this->upload->display_errors());
+        return 'avatar_default.png';
+    }
+
+    public function payment($id){
+        $data['get_kd_invoice'] = $this->get->get_transaction_pending_to_pay($id)->result_array();
+        // var_dump($data);
+        $this->load->view('website/payment',$data);
+    }
+
+    public function update_transaction(){
+        $id = $this->input->post('kd_invoice');
+        $foto = $this->upload_foto();
+        
+        // var_dump($id,$foto);
+
+        $this->update->update_transaksi($id, $foto);
+        redirect('home/transaction');
+    }
     
 
 }

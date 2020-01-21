@@ -22,6 +22,19 @@ class Update_data_model extends CI_Model {
         $this->db->query($sql);
     }
 
+    function update_transaksi($id, $foto){
+        $sql = "
+        UPDATE mt_transaksi a
+                        SET
+                            a.bukti_pembayaran = '$foto',
+                            a.status_bayar = 1
+                        WHERE
+                            a.kd_invoice = '$id'
+        ";
+
+        $this->db->query($sql);
+    }
+
 }
 
 /* End of file Update_data_model.php */
