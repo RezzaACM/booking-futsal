@@ -19,7 +19,8 @@ class Home extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('website/index');
+        $data['lapangan'] = $this->get->get_list_lapangan()->result_array();
+        $this->load->view('website/index',$data);
     }
 
     public function login_member()

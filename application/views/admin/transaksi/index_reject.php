@@ -30,6 +30,7 @@
                                 <th>Harga/Jam</th>
                                 <th>Sewa</th>
                                 <th>Total Bayar</th>
+                                <!-- <th>Bukti Pembayaran</th> -->
                                 <th>Status Bayar</th>
                             </tr>
                         </thead>
@@ -48,6 +49,8 @@
                                     <td><?php echo "Rp. " . number_format($row['total_harga'], 2, ',', ',',) ?></td>
                                     <?php if($row['status_bayar'] == 1){ ?>
                                         <td><button class="btn btn-success">Payment Done</button></td>
+                                    <?php }else if($row['status_bayar'] == -1) {?>
+                                        <td><button class="btn btn-danger">Rejected Payment</button></td>
                                     <?php }?>
                                 </tr>
                             <?php } ?>

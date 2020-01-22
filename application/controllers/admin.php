@@ -148,7 +148,7 @@ class Admin extends CI_Controller
         $data['judul'] = "List Transaction";
         $data['get_trx_user'] = $this->get->get_transaction_done()->result_array();
         $this->load->view('templates/header', $data);
-        $this->load->view('admin/transaksi/index_2',$data);
+        $this->load->view('admin/transaksi/index_done',$data);
         $this->load->view('templates/footer');
     }
 
@@ -163,6 +163,20 @@ class Admin extends CI_Controller
         $data['get_trx_user'] = $this->get->get_report($dari, $sampai)->result_array();
         $this->load->view('templates/header', $data);
         $this->load->view('admin/report/index',$data);
+        $this->load->view('templates/footer');
+    }
+
+    public function reject_act($id){
+        $this->update->update_reject($id);
+        redirect('admin/transaction_done');
+    }
+
+    public function transaction_reject()
+    {
+        $data['judul'] = "List Transaction";
+        $data['get_trx_user'] = $this->get->get_transaction_reject()->result_array();
+        $this->load->view('templates/header', $data);
+        $this->load->view('admin/transaksi/index_reject',$data);
         $this->load->view('templates/footer');
     }
 }

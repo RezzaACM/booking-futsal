@@ -71,6 +71,7 @@
                 <ul class="treeview-menu">
                     <li><a href="<?php echo base_url()?>admin/transaction_pending"><i class="fa fa-circle-o"></i> Transaction Pending</a></li>
                     <li><a href="<?php echo base_url()?>admin/transaction_done"><i class="fa fa-circle-o"></i> Transaction History</a></li>
+                    <li><a href="<?php echo base_url()?>admin/transaction_reject"><i class="fa fa-circle-o"></i> Transaction Reject</a></li>
                 </ul>
             </li>
             <li class="">
@@ -79,6 +80,12 @@
                     <span>Report</span>
                 </a>
             </li>
+            <!-- <li class="">
+                <a href="<?php echo base_url('admin/report') ?>">
+                    <i class="fa fa-gear"></i>
+                    <span>Setting</span>
+                </a>
+            </li> -->
             <hr>
             <li class="">
                 <a href="<?php echo base_url('login_auth/logout') ?>">

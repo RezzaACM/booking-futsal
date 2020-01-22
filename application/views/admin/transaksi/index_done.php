@@ -30,8 +30,8 @@
                                 <th>Harga/Jam</th>
                                 <th>Sewa</th>
                                 <th>Total Bayar</th>
+                                <th>Bukti Pembayaran</th>
                                 <th>Status Bayar</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -47,10 +47,12 @@
                                     <td><?php echo "Rp. " . number_format($row['harga'], 2, ',', ',',) ?></td>
                                     <td><?php echo $row['lama_sewa'] . " Jam" ?></td>
                                     <td><?php echo "Rp. " . number_format($row['total_harga'], 2, ',', ',',) ?></td>
-                                    <?php if($row['status_bayar'] == 0){ ?>
-                                        <td><button class="btn btn-danger">Payment Pending</button></td>
+                                    <td><img width="150px;" src="<?php echo base_url('./upload/struk/'.$row['bukti_pembayaran'])?>" alt=""></td>
+                                    <?php if($row['status_bayar'] == 1){ ?>
+                                        <td><button class="btn btn-success">Payment Done</button></td>
+                                    <?php }else if($row['status_bayar'] == -1) {?>
+                                        <td><button class="btn btn-danger">Rejected Payment</button></td>
                                     <?php }?>
-                                    <td><a onclick="return confirm('Yakin untuk mereject bookingan ini?')" href="<?php echo base_url('admin/reject_act/'.$row['kd_invoice'])?>" class="btn btn-danger">Reject <i class="fa fa-close"></i></a></td>
                                 </tr>
                             <?php } ?>
                         </tbody>

@@ -106,7 +106,7 @@ class Get_data_model extends CI_Model
     function get_transaction_done()
     {
         $sql = "
-            SELECT a.total_harga, a.status_bayar, a.kd_invoice, a.tgl_invoice, a.lama_sewa, b.nama, c.nama as nm_lap, c.harga,d.tgl_jadwal, e.jam FROM mt_transaksi a
+            SELECT a.total_harga, a.bukti_pembayaran, a.status_bayar, a.kd_invoice, a.tgl_invoice, a.lama_sewa, b.nama, c.nama as nm_lap, c.harga,d.tgl_jadwal, e.jam FROM mt_transaksi a
             INNER JOIN mt_pelanggan b ON a.id_pelanggan=b.id
             INNER JOIN mt_lapangan c ON a.id_lapangan=c.id
             INNER JOIN mt_jadwal d ON a.id_jadwal=d.id
@@ -142,6 +142,20 @@ class Get_data_model extends CI_Model
             WHERE a.status_bayar = '0'
             AND a.kd_invoice = '$id'
             ORDER BY d.tgl_jadwal ASC
+        ";
+
+        return $this->db->query($sql);
+    }
+
+    function get_transaction_reject()
+    {
+        $sql = "
+            SELECT a.total_harga, a.bukti_pembayaran, a.status_bayar, a.kd_invoice, a.tgl_invoice, a.lama_sewa, b.nama, c.nama as nm_lap, c.harga,d.tgl_jadwal, e.jam FROM mt_transaksi a
+            INNER JOIN mt_pelanggan b ON a.id_pelanggan=b.id
+            INNER JOIN mt_lapangan c ON a.id_lapangan=c.id
+            INNER JOIN mt_jadwal d ON a.id_jadwal=d.id
+            JOIN mt_waktu e ON d.jam_id=e.id
+            WHERE a.status_bayar = '-1'
         ";
 
         return $this->db->query($sql);
