@@ -8,7 +8,7 @@
       <div class="row">
         <div class="col-md-12 text-center">
           <div class="copyright">
-            <p>© <span>2018</span> <a href="#" class="transition">Rookie Futsal!</a> All rights reserved.</p>
+            <p>© <span>2020</span> <a href="#" class="transition">Roki Futsal!</a> All rights reserved.</p>
           </div>
         </div>
       </div>

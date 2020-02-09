@@ -13,8 +13,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>SELAMAT DATANG DI ROOKIE FUTSAL</h1>
-                    <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt at dolorum veniam? Ducimus expedita asperiores quod saepe, rem neque laboriosam ad laborum! Natus quidem maxime suscipit ut, optio nisi culpa quae adipisci accusamus, quos iusto? Fuga esse ducimus illum tenetur ab eveniet ut placeat expedita accusamus distinctio eum ex quo rem voluptate vel aliquid recusandae aperiam sit dicta quos atque hic optio, vero id! Aut quo facilis voluptatem consequuntur, velit esse praesentium dolor alias iste debitis ex sed eaque, non mollitia numquam veritatis unde nostrum laudantium quos, voluptatibus obcaecati? Placeat maiores provident neque voluptates. Accusantium numquam illo saepe blanditiis et?</P>
+                    <h1>SELAMAT DATANG DI ROKI FUTSAL</h1>
+                    <P>Untuk Melakukan Proses Booking Silahkan Ikuti Langkah Berikut :
+<br>1. Silahkan Daftar Member
+<br>2. Lakukan Login Terlebih Dahulu
+<br>3. Pilih Jadwal Yang Tersedia
+<br>4. Isi Data Pemesan
+<br>5. Lakukan Konfirmasi
+<br>6. Lakukan Pembayaran</P>
                 </div>
             </div>
         </div>

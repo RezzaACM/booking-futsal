@@ -114,7 +114,7 @@ class Post_data_model extends CI_Model
     function transction_act($tgl, $jam, $jadwal_id, $total, $user_id, $nama_user, $inv, $lap_id, $sewa)
     {
         $sql = "
-        INSERT INTO mt_transaksi VALUES ('$inv',now(),'$user_id','$lap_id','$jadwal_id','$sewa','$total','0')
+        INSERT INTO mt_transaksi VALUES ('$inv',now(),'$user_id','$lap_id','$jadwal_id','$sewa','$total','','0')
     ";
 
         $this->db->query($sql);
