@@ -26,7 +26,7 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
             <li class="active">
-                <a href="<?php echo base_url('Home/index') ?>">
+                <a href="<?php echo base_url('admin') ?>">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
             </li>
@@ -54,18 +54,18 @@
                     <span>Member Lapangan </span>
                 </a>
             </li>
-            <li class="">
+            <!-- <li class="">
                 <a href="<?php echo base_url('admin/lapangan_management') ?>">
                     <i class="fa fa-group"></i>
                     <span>Customer List</span>
                 </a>
-            </li>
+            </li> -->
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-files-o"></i>
                     <span>Transaction Management</span>
                     <span class="pull-right-container">
-                        <span class="label label-primary pull-right">4</span>
+                        <!-- <span class="label label-primary pull-right">4</span> -->
                     </span>
                 </a>
                 <ul class="treeview-menu">
